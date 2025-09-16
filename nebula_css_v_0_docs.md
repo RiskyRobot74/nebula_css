@@ -2,7 +2,7 @@
 
 A tiny, highly‑customizable CSS framework built on **design tokens**, **cascade layers**, and **zero‑build theming**. Ships with polished **components**, **utilities**, **responsive variants**, and **container-query helpers**.
 
-> **Version:** 0.1 · **License:** MIT · **Author:** ChatGPT
+> **Version:** 0.1 · **License:** MIT · **Author:** RiskyRobot74
 
 ---
 
