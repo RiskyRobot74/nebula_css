@@ -1,13 +1,14 @@
-# NebulaCSS v0.1 — Documentation
+# NebulaCSS v1.0 — Documentation
 
 A tiny, highly‑customizable CSS framework built on **design tokens**, **cascade layers**, and **zero‑build theming**. Ships with polished **components**, **utilities**, **responsive variants**, and **container-query helpers**.
 
-> **Version:** 0.1 · **License:** MIT · **Author:** RiskyRobot74
+> **Version:** 1.0 · **License:** MIT · **Author:** ChatGPT · **Updated:** With 50+ new features, components, and utilities
 
 ---
 
 ## Table of Contents
 - [Getting Started](#getting-started)
+- [What's New in v1.0](#whats-new-in-v10)
 - [Core Concepts](#core-concepts)
 - [Design Tokens](#design-tokens)
   - [Color System](#color-system)
@@ -32,6 +33,13 @@ A tiny, highly‑customizable CSS framework built on **design tokens**, **cascad
   - [Modal (Dialog)](#modal-dialog)
   - [Tooltip](#tooltip)
   - [Glassmorphism Helper](#glassmorphism-helper)
+  - [Progress Bar](#progress-bar)
+  - [Breadcrumbs](#breadcrumbs)
+  - [Accordion](#accordion)
+  - [Pagination](#pagination)
+  - [Spinner](#spinner)
+  - [Divider](#divider)
+  - [Callout](#callout)
 - [Utilities](#utilities)
   - [Display](#display)
   - [Flexbox](#flexbox)
@@ -45,6 +53,7 @@ A tiny, highly‑customizable CSS framework built on **design tokens**, **cascad
   - [Shadows Utilities](#shadows-utilities)
   - [Transitions](#transitions)
   - [Animations](#animations)
+  - [Advanced Utilities (v1.0)](#advanced-utilities-v10)
   - [Utility Wrappers](#utility-wrappers)
 - [Responsive Variants](#responsive-variants)
 - [Container Queries](#container-queries)
@@ -76,6 +85,90 @@ A tiny, highly‑customizable CSS framework built on **design tokens**, **cascad
   <div class="theme-ocean"> ... </div>
 </body>
 ```
+
+---
+
+## What's New in v1.0
+
+**50+ new features** including:
+
+✨ **New Design Tokens:**
+- Extended easing functions (`ease-in`, `ease-out`, `ease-in-out`, `bounce`)
+- Z-index scale for consistent layering (`z-base`, `z-dropdown`, `z-modal`, etc.)
+- Opacity scale utilities (`--opacity-0` through `--opacity-100`)
+- Aspect ratio presets (`square`, `video`, `4-3`, `3-2`, `golden`)
+
+🎨 **New Theme Palettes:**
+- `.theme-forest` — green & purple palette
+- `.theme-sunset` — orange & purple palette
+- `.theme-midnight` — deep blue palette
+- `.theme-lavender` — purple & gold palette
+- `.theme-mint` — teal & pink palette
+
+🧩 **New Button Variants:**
+- `.is-loading` — loading state with spinner
+- `.is-block` — full-width button
+- `.is-outlined-primary/secondary` — outlined button styles
+- `.is-link` — link-style button
+- `.is-shadow` — elevated button with shadow
+- `.is-xl` — extra large size
+- `:disabled` state handling
+
+📦 **New Card Features:**
+- `.is-interactive` — hover lift effect
+- `.is-flat` — no shadow variant
+- `.is-bordered` — strong border variant
+- `.is-divided` — enhanced divider styling
+- `.elev-4` — extra shadow elevation
+
+🏷️ **New Badge Variants:**
+- Soft variants for all semantic colors (success, warning, danger)
+- `.is-pill` — pill-shaped badge
+
+📝 **New Form Components:**
+- `.input-group` — combined input + button groups
+- `.label.is-required` — required indicator
+- Form validation states (`.is-valid`, `.is-invalid`, `:disabled`)
+
+🔘 **New Switch Sizes:**
+- `.is-sm` — small switch
+- `.is-lg` — large switch
+
+📊 **New Components:**
+- **Progress Bar** (`.progress`, `.progress-bar`)
+- **Breadcrumbs** (`.breadcrumbs`)
+- **Accordion** (`.accordion-item`, `.accordion-header`, `.accordion-content`)
+- **Pagination** (`.pagination`)
+- **Spinner** (`.spinner`)
+- **Divider** (`.divider`, `.divider.is-vertical`)
+- **Callout** (`.callout` with semantic variants)
+
+🎯 **Advanced Utilities (100+ new):**
+- **Opacity:** Full scale from 0-100
+- **Z-Index:** Consistent layering scale
+- **Aspect Ratios:** Multiple preset ratios
+- **Cursor:** Full cursor style suite
+- **Overflow:** Complete overflow control
+- **Scroll Behavior:** Smooth scrolling
+- **Text Decoration:** Underline, overline, line-through, decoration styles
+- **List Styles:** List style utilities
+- **Whitespace:** Text wrapping controls
+- **Word Break:** Text breaking utilities
+- **User Select:** Selection control
+- **Pointer Events:** Event handling utilities
+- **Transforms:** Scale, rotate, skew, translate
+- **Filters:** Blur, brightness, contrast, grayscale, invert, saturate
+- **Backdrop Filters:** Blur, brightness effects
+- **Border Width:** Granular border control
+- **Flex Basis & Grow/Shrink:** Flexbox fine-tuning
+- **Max Height:** Height constraints
+- **Letter Spacing & Line Height:** Typography refinement
+- **Gradient Backgrounds:** Preset gradients
+- **Striped Patterns:** Repeating backgrounds
+
+✨ **Enhanced Animations:**
+- `bounce`, `shake`, `slideInUp`, `slideInDown`, `fadeIn`, `fadeOut`, `scaleIn`
+- Corresponding utility classes
 
 ---
 
@@ -358,6 +451,106 @@ Example:
 
 ---
 
+### Progress Bar
+**Classes:** `.progress`, `.progress-bar`
+
+**Variants:** `.is-success`, `.is-warning`, `.is-danger`
+
+```html
+<div class="progress">
+  <div class="progress-bar" style="width: 65%"></div>
+</div>
+
+<div class="progress">
+  <div class="progress-bar is-success" style="width: 100%"></div>
+</div>
+```
+
+---
+
+### Breadcrumbs
+**Class:** `.breadcrumbs`
+
+```html
+<nav class="breadcrumbs">
+  <a href="#">Home</a>
+  <a href="#">Products</a>
+  <a href="#">Category</a>
+  <span>Current Page</span>
+</nav>
+```
+
+---
+
+### Accordion
+**Classes:** `.accordion-item`, `.accordion-header`, `.accordion-content`
+
+**State:** `.is-open` on `.accordion-item`
+
+```html
+<div class="accordion-item is-open">
+  <div class="accordion-header">Accordion Title</div>
+  <div class="accordion-content">Content goes here...</div>
+</div>
+```
+
+---
+
+### Pagination
+**Class:** `.pagination`
+
+**Modifiers:** `.is-active`, `.is-disabled`
+
+```html
+<nav class="pagination">
+  <a class="is-disabled">← Previous</a>
+  <a class="is-active">1</a>
+  <a>2</a>
+  <a>3</a>
+  <a>Next →</a>
+</nav>
+```
+
+---
+
+### Spinner
+**Class:** `.spinner`
+
+```html
+<div class="spinner"></div>
+```
+
+---
+
+### Divider
+**Classes:** `.divider`, `.divider.is-vertical`
+
+```html
+<div class="divider"></div>
+<div style="display: flex; gap: 2rem;">
+  <div>Left</div>
+  <div class="divider is-vertical"></div>
+  <div>Right</div>
+</div>
+```
+
+---
+
+### Callout
+**Classes:** `.callout`, `.callout.is-info`, `.callout.is-success`, `.callout.is-warning`, `.callout.is-danger`
+
+```html
+<div class="callout is-info">
+  <strong>Info:</strong> This is important information.
+</div>
+
+<div class="callout is-success">
+  <strong>Success:</strong> Operation completed successfully.
+</div>
+```
+
+---
+
 ## Utilities
 
 NebulaCSS ships a pragmatic set of utilities under `@layer utilities`.
@@ -413,6 +606,78 @@ Example:
   <p>Paragraph 2</p>
 </div>
 ```
+
+---
+
+## Advanced Utilities (v1.0)
+
+NebulaCSS v1.0 adds 100+ advanced utilities:
+
+### Opacity
+`opacity-0`, `opacity-10`, `opacity-20`, `opacity-30`, `opacity-40`, `opacity-50`, `opacity-60`, `opacity-70`, `opacity-80`, `opacity-90`, `opacity-100`
+
+### Z-Index
+`z-base`, `z-dropdown`, `z-sticky`, `z-fixed`, `z-modal-backdrop`, `z-modal`, `z-tooltip`, `z-notification`
+
+### Aspect Ratios
+`aspect-square`, `aspect-video`, `aspect-4-3`, `aspect-3-2`, `aspect-golden`
+
+### Cursor Styles
+`cursor-auto`, `cursor-default`, `cursor-pointer`, `cursor-wait`, `cursor-text`, `cursor-move`, `cursor-not-allowed`, `cursor-grab`, `cursor-grabbing`
+
+### Overflow Control
+`overflow-visible`, `overflow-hidden`, `overflow-scroll`, `overflow-auto`, `overflow-x-auto`, `overflow-y-auto`
+
+### Scroll Behavior
+`scroll-smooth`, `scroll-auto`
+
+### Text Decoration
+`underline`, `overline`, `line-through`, `no-underline`, `decoration-solid`, `decoration-dashed`, `decoration-dotted`, `decoration-wavy`
+
+### List Styles
+`list-none`, `list-disc`, `list-decimal`, `list-inside`, `list-outside`
+
+### Whitespace & Text Wrapping
+`whitespace-normal`, `whitespace-nowrap`, `whitespace-pre`, `whitespace-pre-wrap`, `whitespace-pre-line`, `truncate`, `line-clamp-1`, `line-clamp-2`, `line-clamp-3`
+
+### Word Breaking
+`break-normal`, `break-words`, `break-all`
+
+### User Selection
+`select-none`, `select-text`, `select-all`, `select-auto`
+
+### Pointer Events
+`pointer-events-none`, `pointer-events-auto`
+
+### Transforms
+`scale-75`, `scale-90`, `scale-100`, `scale-110`, `scale-125`, `rotate-45`, `rotate-90`, `rotate-180`, `skew-x-12`, `skew-y-12`, `translate-x-full`, `translate-y-full`
+
+### Filters
+`blur`, `blur-sm`, `blur-lg`, `brightness-75`, `brightness-125`, `contrast-75`, `contrast-125`, `grayscale`, `grayscale-0`, `invert`, `saturate-50`, `saturate-150`
+
+### Backdrop Filters
+`backdrop-blur`, `backdrop-blur-sm`, `backdrop-blur-lg`, `backdrop-brightness-75`, `backdrop-brightness-125`
+
+### Border Width
+`border-0`, `border-1`, `border-2`, `border-4`, `border-t`, `border-r`, `border-b`, `border-l`
+
+### Gap Utilities
+`gap-0`, `gap-1…6`, `gap-7`, `gap-8`
+
+### Flexbox Fine-tuning
+`basis-full`, `basis-1-2`, `basis-1-3`, `basis-1-4`, `basis-2-3`, `basis-3-4`, `flex-grow`, `flex-grow-0`, `flex-shrink`, `flex-shrink-0`
+
+### Height Constraints
+`max-h-xs`, `max-h-sm`, `max-h-md`, `max-h-lg`, `max-h-xl`, `max-h-full`, `max-h-screen`, `min-h-0`, `min-h-full`
+
+### Typography Refinement
+`tracking-tighter`, `tracking-tight`, `tracking-normal`, `tracking-wide`, `tracking-wider`, `leading-3…10`, `leading-relaxed`, `leading-loose`
+
+### Gradients & Patterns
+`bg-gradient-primary`, `bg-gradient-secondary`, `bg-gradient-accent`, `stripe-primary`, `stripe-secondary`
+
+### Advanced Animations
+`animate-bounce`, `animate-shake`, `animate-slide-up`, `animate-slide-down`, `animate-fade-in`, `animate-fade-out`, `animate-scale-in`
 
 ---
 
@@ -553,9 +818,26 @@ Soft semantic surfaces for inline highlighting:
 ---
 
 ## Roadmap
-- Components: Table, Breadcrumbs, Accordion/Disclosure, Dropdown, Toasts, Progress, Skeletons, Pagination
-- Utilities: More `gap-*`, aspect-ratio helpers, sticky and z-index helpers
-- Tooling: Optional minified build, CSS custom properties docs site, theme generator
+
+**v1.0 Completed:**
+- ✅ Breadcrumbs, Accordion/Disclosure, Progress, Pagination
+- ✅ 100+ advanced utility classes (opacity, z-index, transforms, filters, etc.)
+- ✅ Extended animations and easing functions
+- ✅ Additional theme palettes
+
+**Future Roadmap (v1.1+):**
+- Table component with styling
+- Dropdown & context menus
+- Toast notifications
+- Skeleton loaders
+- Combobox / Select dropdown
+- File input styling
+- Drag-and-drop utilities
+- Sticky positioning helpers
+- Optional minified build
+- CSS variables documentation site
+- Interactive theme generator
+- Component composition guide
 
 ---
 
@@ -573,17 +855,19 @@ Soft semantic surfaces for inline highlighting:
 
 **Borders/Radii:** `bordered`, `border-strong`, `rounded`, `rounded-sm`, `rounded-lg`, `rounded-xl`, `rounded-full`
 
-**Color/Text:** `bg-surface`, `bg-surface-1`, `bg-surface-2`, `bg-primary`, `bg-soft-primary`, `text-primary`, `text-muted`, `text-invert`, `ring`
+**Color/Text:** `bg-surface`, `bg-surface-1`, `bg-surface-2`, `bg-primary`, `bg-soft-primary`, `text-primary`, `text-muted`, `text-invert`, `ring`, `bg-gradient-*`
 
-**Typography:** `text-xs`, `text-sm`, `text-base`, `text-lg`, `text-xl`, `text-2xl`, `text-3xl`, `text-4xl`, `font-light`, `font-normal`, `font-medium`, `font-semibold`, `font-bold`, `text-left`, `text-center`, `text-right`
+**Typography:** `text-xs`, `text-sm`, `text-base`, `text-lg`, `text-xl`, `text-2xl`, `text-3xl`, `text-4xl`, `font-light`, `font-normal`, `font-medium`, `font-semibold`, `font-bold`, `text-left`, `text-center`, `text-right`, `tracking-*`, `leading-*`
 
-**Position:** `relative`, `absolute`, `fixed`
+**Position:** `relative`, `absolute`, `fixed`, `z-base`, `z-dropdown`, `z-modal`, etc.
 
 **Shadows:** `shadow-sm`, `shadow`, `shadow-lg`, `shadow-xl`
 
-**Motion:** `transition`, `transition-fast`, `transition-slow`, `animate-spin`, `animate-pulse`, `animate-float`
+**Motion:** `transition`, `transition-fast`, `transition-slow`, `animate-spin`, `animate-pulse`, `animate-float`, `animate-bounce`, `animate-shake`, `animate-slide-*`, `animate-fade-*`, `animate-scale-in`
+
+**Advanced (v1.0):** `opacity-*`, `scale-*`, `rotate-*`, `blur*`, `brightness-*`, `contrast-*`, `grayscale`, `invert`, `overflow-*`, `whitespace-*`, `truncate`, `line-clamp-*`, `cursor-*`, `pointer-events-*`, `select-*`, `aspect-*`, `max-h-*`, `min-h-*`
 
 **Wrappers:** `stack`, `cluster`, `cq`
 
-**Components:** `btn (+ variants/sizes)`, `badge (+ soft)`, `card (+ header/body/footer + elev)`, `field/label/input/select/textarea/help (+ is-invalid)`, `switch`, `navbar (+ navbar-inner)`, `tabs/tab`, `alert (+ variants)`, `modal (+ parts)`, `glass`, `sr-only`
+**Components:** `btn (+ variants/sizes)`, `badge (+ soft/pill)`, `card (+ elev/interactive/flat)`, `field/label/input-group/textarea/help`, `switch (+ sizes)`, `navbar (+ variants)`, `tabs/tab`, `alert (+ dismissible)`, `modal (+ sizes)`, `progress`, `breadcrumbs`, `accordion`, `pagination`, `spinner`, `divider`, `callout`, `glass`, `sr-only`
 
